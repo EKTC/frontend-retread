@@ -1,0 +1,27 @@
+### Javascript
+
+- Browsers do not yet support all of JavaScript's newest features
+- Due to this fact, a lot of code run in browsers has been transpiled from a newer version of JavaScript to an older, more compatible version
+- Today, the most popular way to do transpiling is by using Babel. Transpilation is automatically configured in React applications created with Vite.
+- Node.js is a javascript runtine environment
+- You can open a nodejs console by typing `node`
+
+### Variables
+
+```js
+const x = 1;
+let y = 5;
+
+console.log(x, y); // 1 5 are printed
+y += 10;
+console.log(x, y); // 1 15 are printed
+y = "sometext";
+console.log(x, y); // 1 sometext are printed
+x = 4; // causes an error
+```
+
+- const means it becomes immutable and we cannot change the value for that variable
+- let allows us to change it whenever as it is mutable
+- Javascript is loosely typed so we do not need to define the variable type but rather just initialise it
+  - Hence why we can switch the `y` variable which is an `int` to a `string` without errors
+- `var` is also a keyword used instead of `let & const` before but is now only used for older browsers
