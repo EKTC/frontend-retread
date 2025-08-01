@@ -25,3 +25,66 @@ x = 4; // causes an error
 - Javascript is loosely typed so we do not need to define the variable type but rather just initialise it
   - Hence why we can switch the `y` variable which is an `int` to a `string` without errors
 - `var` is also a keyword used instead of `let & const` before but is now only used for older browsers
+
+### Arrays
+
+```js
+const t = [1, -1, 3];
+
+t.push(5);
+
+console.log(t.length); // 4 is printed
+console.log(t[1]); // -1 is printed
+
+t.forEach((value) => {
+  console.log(value); // numbers 1, -1, 3, 5 are printed, each on its own line
+});
+// --------------------------- //
+t = [1, 2, 3];
+new_arr = [...t];
+```
+
+- We can iterate through an arry with `forEach`, in which we can define a function
+- This function will occur on each item
+- We also have the spread syntax which is `...`
+- This will include the any objects or array as part of a new one or to apply to these args one by one
+
+```js
+const t = [1, -1, 3];
+
+const t2 = t.concat(5); // creates new array
+
+console.log(t); // [1, -1, 3] is printed
+console.log(t2); // [1, -1, 3, 5] is printed
+```
+
+- There is also another way to insert elements which is through `concat`
+- Rather than mutating the current array, `concat` will return a new array with the elements inserted
+- This is just like the `...` spread syntax as explored above
+
+```js
+const t = [1, 2, 3];
+
+const m1 = t.map((value) => value * 2);
+console.log(m1); // [2, 4, 6] is printed
+```
+
+- JS has alot of methods assosciated with arrays
+- One being `map` which creates a new array based on the items given
+
+```js
+const t = [1, 2, 3, 4, 5];
+
+const [first, second, ...rest] = t;
+
+console.log(first, second); // 1 2 is printed
+console.log(rest); // [3, 4, 5] is printed
+```
+
+- This code example is the idea of destructuring, where the `first` variable is assigned `1`
+- `second` assigned `2`
+- And finally `rest` getting the rest of the items by condensing it all with the `...` spread
+
+### Objects
+
+### Functions
