@@ -128,3 +128,55 @@ object1["secret number"] = 12341;
 - The latter of the additions has to be done by using brackets because when using dot notation, secret number is not a valid property name because of the space character
 
 ### Functions
+
+- Below is how to define an arrow function
+
+```js
+const sum = (p1, p2) => {
+  console.log(p1);
+  console.log(p2);
+  return p1 + p2;
+};
+
+// We can call it as such:
+const result = sum(1, 5);
+console.log(result);
+
+// If we have a single parameter we can just remove the parentheses
+const square = (p) => {
+  console.log(p);
+  return p * p;
+};
+```
+
+- If the function contains a single expression we can omit the braces
+- This can be very useful with `map` and manipulating arrays
+
+```js
+const square = (p) => p * p;
+
+// --------- Map tech --------- //
+const t = [1, 2, 3];
+const tSquared = t.map((p) => p * p);
+// tSquared is now [1, 4, 9]
+```
+
+- Arrow functions were added in 2015, whilst before we had to define it with keyword `function`
+- We can also make a function expression with no need for a name
+
+```js
+function product(a, b) {
+  return a * b;
+}
+
+const result = product(2, 6);
+// result is now 12
+
+// --------- Function Expr -------------- //
+const average = function (a, b) {
+  return (a + b) / 2;
+};
+
+const result = average(2, 5);
+// result is now 3.5
+```
