@@ -1,18 +1,15 @@
-const Header = (props) => {
+const Section = (props) => {
+  let t =
+    props.content[0].exercises +
+    props.content[1].exercises +
+    props.content[2].exercises;
   return (
     <div>
       <h1>{props.course_name}</h1>
-    </div>
-  );
-};
-
-const Content = (props) => {
-  console.log(props);
-  return (
-    <div>
       {props.content.map((part, index) => (
         <Part key={index} part={part.name} num_ex={part.exercises}></Part>
       ))}
+      <p>Number of exercises {t}</p>
     </div>
   );
 };
@@ -25,18 +22,7 @@ const Part = (props) => {
     </p>
   );
 };
-const Total = (props) => {
-  console.log(props);
-  let t =
-    props.total[0].exercises +
-    props.total[1].exercises +
-    props.total[2].exercises;
-  return (
-    <div>
-      <p>Number of exercises {t}</p>
-    </div>
-  );
-};
+
 const App = () => {
   const course = "Half Stack application development";
   const parts = [
@@ -56,10 +42,7 @@ const App = () => {
 
   return (
     <div>
-      <Header course_name={course}></Header>
-      <Content content={parts}></Content>
-
-      <Total total={parts}></Total>
+      <Section course_name={course} content={parts}></Section>
     </div>
   );
 };
